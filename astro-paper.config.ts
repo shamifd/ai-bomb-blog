@@ -8,7 +8,7 @@ export default defineAstroPaperConfig({
     author: "ai_bomb",
     profile: "https://ai-bomb-blog.pages.dev/",
     ogImage: "default-og.jpg",
-    lang: "zh-CN",
+    lang: "en",
     timezone: "Asia/Shanghai",
     dir: "ltr",
   },
