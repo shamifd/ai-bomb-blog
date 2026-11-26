@@ -2,7 +2,7 @@
 title: "还在用关键词死磕采购邮箱？Product Hunt 周榜第一的 Alsona，直接按“海外公司正在招人”抓精准买手"
 author: "ai_bomb"
 pubDatetime: 2026-11-24T10:00:00.000Z
-description: "传统搜邮箱开发客户，发一百封九十九封石沉大海，因为你不知道对方此刻需不需要换供应商。实测 Product Hunt 周榜第一的 Alsona：监控欧美企业真实招聘信号，核对原始招聘启事，定位决策人并生成定制破冰信。"
+description: "实测 Product Hunt 周榜第一的 Alsona：自动监控欧美企业采购与供应链招聘信号，核对原始招聘启事并定位决策人。"
 tags:
   - 外贸获客
   - B2B营销
