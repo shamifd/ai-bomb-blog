@@ -1,37 +1,21 @@
 ---
-title: "About"
+title: "About | 关于 ai_bomb"
 description: "A bit about me and this blog."
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+**ai_bomb 出海实测库（aibomblab.com）** 是一家专注于海外高效率 AI SaaS 工具实战测评与跨境出海自动化工作流的独立科技媒体。
 
-![Astro Paper](@/assets/images/astropaper-og.jpg)
+我们坚持“真实上手实测、拒绝云评测”的原则，长期服务于中国跨境电商卖家（Shopify / Amazon / TikTok Shop）、B2B 外贸企业、独立创作者及科研办公人群，提供第一手的工具对比、工作流拆解与合规避坑指南。
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+### 同步更新矩阵
+* **独立内容基地**：[https://aibomblab.com](https://aibomblab.com)
+* **微信公众号**：`bomb_ai`
+* **知乎 / 小红书**：`ai_bomb`
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+---
 
-## Features
+### About ai_bomb Lab (English)
+**ai_bomb Lab (aibomblab.com)** is an independent tech review publication dedicated to hands-on tutorials, SaaS workflow benchmarks, and cross-border e-commerce automation guides for Chinese entrepreneurs, B2B exporters, and global digital creators.
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
-
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
-
-and so much more.
-
-## Show your support
-
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+* **Primary Channels**: Official Blog (`aibomblab.com`), WeChat Official Account (`bomb_ai`), Zhihu (`ai_bomb`), and Xiaohongshu (`ai_bomb`).
+* **Contact & Partnerships**: `shamifd@gmail.com`
