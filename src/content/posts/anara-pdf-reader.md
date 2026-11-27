@@ -1,5 +1,5 @@
 ---
-title: "别再用普通AI瞎编文献总结了！实测科研工作台Anara：PDF秒级拆解，句句原文高亮溯源"
+title: "别再用普通AI瞎编文献了！实测科研工作台Anara：PDF秒级拆解，句句原文高亮溯源"
 author: "ai_bomb"
 pubDatetime: 2026-11-22T10:00:00.000Z
 description: "普通 AI 总结长文总爱瞎编？实测海外科研工作台 Anara（原 Unriddle）：批量导入英文论文、行业白皮书与招标书，AI 每句回答均带引用角标，点击秒级高亮定位 PDF 原文。"
