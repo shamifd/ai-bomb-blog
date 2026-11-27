@@ -1,7 +1,7 @@
 ---
 title: "一人外贸团队AI工作流：4款工具打通获客闭环"
 author: "ai_bomb"
-pubDatetime: 2026-11-28T09:00:00Z
+pubDatetime: 2026-11-27T12:00:00Z
 description: "单靠群发开发信回复率越来越低？实测跑通的一人外贸AI自动化工作流：Alsona锁信号、Snov.io双渠道外联、GenPage定制报价页、ElevenLabs英文配音。"
 tags:
   - 外贸获客
