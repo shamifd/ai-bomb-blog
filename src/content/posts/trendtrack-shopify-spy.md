@@ -1,5 +1,5 @@
 ---
-title: "做独立站最怕闭门造车？实测海外爆火插件 Trendtrack，3 秒扒光同行 Shopify 流量与广告底牌"
+title: "实测插件 Trendtrack：3秒扒光同行 Shopify 流量与广告"
 author: "ai_bomb"
 pubDatetime: 2026-11-27T06:00:00.000Z
 description: "每天拍脑袋猜爆款、硬砸广告却不见转化？实测海外独立站圈疯传的浏览器插件 Trendtrack：打开任意 Shopify 竞品网站，秒看月访问量、热销单品、安装插件及在投 Meta 广告。"
