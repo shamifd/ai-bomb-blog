@@ -10,7 +10,8 @@ description: "A bit about me and this blog."
 ### 同步更新矩阵
 * **独立内容基地**：[https://aibomblab.com](https://aibomblab.com)
 * **微信公众号**：`bomb_ai`
-* **知乎 / 小红书**：`ai_bomb`
+* **知乎**：`aibomb`
+* **小红书**：`ai_bomb`
 
 ---
 
