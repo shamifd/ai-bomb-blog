@@ -1,0 +1,36 @@
+---
+import { getEntry, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import config from "@/config";
+
+const stack = await getEntry("pages", "stack");
+
+if (!stack) {
+  throw new Error(
+    "Missing content entry: `stack.md` or `stack.mdx` in `src/content/pages/`"
+  );
+}
+
+const { Content } = await render(stack);
+---
+
+<Layout
+  title={`${stack.data.title} | ${config.site.title}`}
+  description={stack.data.description}
+  ogImage={stack.data.ogImage}
+  canonicalURL={stack.data.canonicalURL}
+>
+  <Header />
+
+  <Breadcrumb />
+
+  <Main pageTitle={stack.data.title} class="app-prose">
+    <Content />
+  </Main>
+
+  <Footer />
+</Layout>
