@@ -21,7 +21,7 @@ tags:
 
 实测中，直接把一条英文访谈/测评长视频粘贴进 **[OpusClip 工作台](https://tolt.link/ai_bomb)**（也支持直接上传本地 MP4 文件），系统会先转写完整英文字幕，识别出视频里“提出痛点—演示对比—给出结论”的完整逻辑闭环，一次性自动抽取出 20 多条独立成篇的短视频片段。
 
-![OpusClip 自动抓取高完播片段与传播潜力评分](/images/opusclip/fig1_opus_clip_curation.jpg)
+![OpusClip 自动抓取高完播片段与传播潜力评分](/images/opusclip/fig1_opus_clip_curation.png)
 
 每条切片左下角都会给出一个传播潜力评分（如 99 分、98 分、92 分）和自动提炼的爆款标题，方便运营人员优先挑出高分片段做首发测试。
 
@@ -51,7 +51,7 @@ OpusClip 采用按月度积分（Credits）计费的模式，三档权益划分�
 * **入门版（Starter，$15/月）**：每月 150 积分，核心价值是 **去除水印（Remove Watermark）**、解锁完整编辑器以及 1 套品牌字体/配色模板，适合个人创作者与单品牌账号。
 * **专业版（Pro，$29/月）**：每月 300 积分（当月未用完的积分可顺延 1 个月），额外解锁 2 套品牌模板、AI 自动配 B-Roll 空镜、动态图形以及团队双席位协作，适合高频分发矩阵的运营团队。
 
-![OpusClip 免费版与付费版权益对比](/images/opusclip/fig3_opus_pricing.jpg)
+![OpusClip 免费版与付费版权益对比](/images/opusclip/fig3_opus_pricing.png)
 
 ## Q6：哪类出海团队最值得把 OpusClip 放进日常工作流？
 
