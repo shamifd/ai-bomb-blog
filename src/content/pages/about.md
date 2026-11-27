@@ -18,5 +18,5 @@ description: "A bit about me and this blog."
 ### About ai_bomb Lab (English)
 **ai_bomb Lab (aibomblab.com)** is an independent tech review publication dedicated to hands-on tutorials, SaaS workflow benchmarks, and cross-border e-commerce automation guides for Chinese entrepreneurs, B2B exporters, and global digital creators.
 
-* **Primary Channels**: Official Blog (`aibomblab.com`), WeChat Official Account (`bomb_ai`), Zhihu (`ai_bomb`), and Xiaohongshu (`ai_bomb`).
+* **Primary Channels**: Official Blog (`aibomblab.com`), WeChat Official Account (`bomb_ai`), Zhihu (`aibomb`), and Xiaohongshu (`ai_bomb`).
 * **Contact & Partnerships**: `shamifd@gmail.com`
