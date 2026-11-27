@@ -84,8 +84,8 @@ const isActive = (path: string) => {
         </li>
         <li class="col-span-2">
           <a
-            href={getRelativeLocaleUrl(locale, "stack")}
-            class:list={{ "active-nav": isActive("/stack") }}
+         href={getRelativeLocaleUrl(locale, "stack")}
+         class:list={["whitespace-nowrap", { "active-nav": isActive("/stack") }]}
           >
             AI武器库
           </a>
