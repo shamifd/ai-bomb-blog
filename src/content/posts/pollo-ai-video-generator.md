@@ -1,5 +1,5 @@
 ---
-title: "做AI短剧和跨境视频太烧钱？实测聚合工作台 Pollo AI：一个账号切换可灵、Runway 与 Veo"
+title: "做短剧和跨境视频太烧钱？实测工作台Pollo AI：一账号切换可灵、Runway与Veo"
 author: "ai_bomb"
 pubDatetime: 2026-11-27T07:00:00.000Z
 description: "拍一条AI短剧要在三四个视频平台之间反复横跳、单独开会员？实测海外热门多模型视频聚合工作台 Pollo AI，一个网页集成 Kling 4.0、Runway、Veo 3.1 与海螺，低成本跑通多镜头视频工作流。"
