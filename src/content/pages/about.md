@@ -1,6 +1,6 @@
 ---
 title: "About | 关于 ai_bomb"
-description: "ai_bomb Lab：海外 AI 工具的工作流拆解、成本算账与选型边界。"
+description: "ai_bomb Lab：海外 AI 工具的工作流拆解、成本算账与适用场景。"
 ---
 
 **ai_bomb 出海实测库（aibomblab.com）** 是一家专注于海外高效率 AI SaaS 工具实战测评与跨境出海自动化工作流的独立科技媒体。
