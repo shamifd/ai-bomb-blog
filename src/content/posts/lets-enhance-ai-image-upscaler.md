@@ -4,10 +4,7 @@ author: "ai_bomb"
 pubDatetime: 2026-11-28T02:33:00Z
 description: "做跨境POD定制印花或海报设计，AI生成的图片分辨率太低印出来全是马赛克？实测老牌图像超分工具Let's Enhance：一键4倍无损放大拉满300 DPI印刷精度。"
 tags:
-  - 跨境电商
-  - POD印花
-  - AI图像处理
-  - 效率工具
+  - 电商视觉
 featured: false
 draft: false
 ---

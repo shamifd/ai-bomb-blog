@@ -5,9 +5,7 @@ pubDatetime: 2026-11-27T12:00:00Z
 description: "单靠群发开发信回复率越来越低？实测跑通的一人外贸AI自动化工作流：Alsona锁信号、Snov.io双渠道外联、GenPage定制报价页、ElevenLabs英文配音。"
 tags:
   - 外贸获客
-  - AI工作流
-  - 跨境出海
-  - 效率工具
+  - 工作流串联
 featured: true
 draft: false
 ---

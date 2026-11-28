@@ -4,10 +4,7 @@ author: "ai_bomb"
 pubDatetime: 2026-11-26T11:30:00Z
 description: "海外买家正加速用 ChatGPT 和 Perplexity 搜产品比价。实测法国团队开发的 GEO 诊断仪 Howseen AI：排查可见度与爬虫权限，生成 llms.txt。"
 tags:
-  - GEO优化
-  - 独立站
-  - 跨境出海
-  - AI工具
+  - 独立站与GEO
 featured: false
 draft: false
 ---

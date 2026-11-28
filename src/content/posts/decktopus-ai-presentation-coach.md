@@ -4,10 +4,7 @@ author: "ai_bomb"
 pubDatetime: 2026-11-28T08:35:00Z
 description: "做季度汇报、商业提案或英文路演总把时间耗在调排版和写讲稿上？深度拆解海外演示工具 Decktopus AI：输入主题自动生成统一视觉幻灯片，并内置 Loop AI 演讲教练与 Do/Avoid 表达提示。"
 tags:
-  - AI办公
-  - PPT工具
-  - 效率工具
-  - 职场进阶
+  - 文档与SOP
 featured: false
 draft: false
 ---

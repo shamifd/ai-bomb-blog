@@ -4,10 +4,7 @@ author: "ai_bomb"
 pubDatetime: 2026-11-26T13:30:00Z
 description: "跨境团队带新人、写客服售后手册总要一张张截图画红框？实测 Product Hunt 日榜第一 Glitter AI：边录屏边说话，自动生成带红框的图文 SOP。"
 tags:
-  - AI效率
-  - 团队协作
-  - 跨境出海
-  - SOP自动化
+  - 文档与SOP
 featured: false
 draft: false
 ---

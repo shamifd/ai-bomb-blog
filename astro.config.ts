@@ -16,6 +16,7 @@ import {
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { rehypeTableWrapper } from "./src/utils/rehypeTableWrapper";
+import { rehypeExternalLinks } from "./src/utils/rehypeExternalLinks";
 import {
   inlineTocDeprecation,
   rehypeInlineToc,
@@ -33,8 +34,8 @@ export default defineConfig({
     inlineTocDeprecation(),
   ],
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["zh-CN"],
+    defaultLocale: "zh-CN",
     routing: {
       prefixDefaultLocale: false,
     },
@@ -49,6 +50,7 @@ export default defineConfig({
         rehypeInlineToc,
         rehypeCallouts,
         rehypeTableWrapper,
+        rehypeExternalLinks,
       ],
     }),
     shikiConfig: {

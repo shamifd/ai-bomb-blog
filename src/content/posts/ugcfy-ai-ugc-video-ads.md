@@ -4,10 +4,7 @@ author: "ai_bomb"
 pubDatetime: 2026-11-28T06:53:00Z
 description: "TikTok和Meta信息流投流找老外拍带货视频太烧钱？实测AI UGC视频工具UGCfy AI：贴入商品链接自动生成痛点钩子与口播脚本，一键输出欧美真人口播广告。"
 tags:
-  - 跨境电商
-  - AI视频
-  - 独立站运营
-  - 效率工具
+  - 短视频与配音
 featured: false
 draft: false
 ---

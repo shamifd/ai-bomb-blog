@@ -4,10 +4,7 @@ author: "ai_bomb"
 pubDatetime: 2026-11-28T02:10:00Z
 description: "跨境独立站与亚马逊上新拍场景图太烧钱？实测电商AI视觉工具Claid.ai：白底图一键生成真实光影欧美棚拍大片，模糊供应链原图无损高清放大。"
 tags:
-  - 跨境电商
-  - AI商拍
-  - 独立站运营
-  - 效率工具
+  - 电商视觉
 featured: false
 draft: false
 ---

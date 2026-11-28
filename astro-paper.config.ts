@@ -8,7 +8,7 @@ export default defineAstroPaperConfig({
     author: "ai_bomb",
     profile: "https://aibomblab.com/",
     ogImage: "default-og.jpg",
-    lang: "en",
+    lang: "zh-CN",
     timezone: "Asia/Shanghai",
     dir: "ltr",
   },
@@ -22,8 +22,7 @@ export default defineAstroPaperConfig({
     showArchives: true,
     showBackButton: true,
     editPost: {
-      enabled: true,
-      url: "https://github.com/satnaing/astro-paper/edit/main/",
+      enabled: false,
     },
     search: "pagefind",
     toc: true,

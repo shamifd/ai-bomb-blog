@@ -23,9 +23,35 @@ const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 const homePath = getRelativeLocaleUrl(locale, "");
+
+const siteData = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${config.site.url}#website`,
+      name: config.site.title,
+      url: config.site.url,
+      description: config.site.description,
+      inLanguage: config.site.lang,
+      publisher: { "@id": `${config.site.url}#org` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${config.site.url}#org`,
+      name: config.site.title,
+      url: config.site.url,
+      logo: new URL("favicon.svg", config.site.url).href,
+      email: "shamifd@gmail.com",
+    },
+  ],
+}).replace(/</g, "\\u003c");
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={siteData} />
+  </Fragment>
   <Header />
   <main
     id="main-content"
