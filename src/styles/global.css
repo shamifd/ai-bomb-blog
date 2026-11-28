@@ -81,3 +81,10 @@
   margin-top: 0.4rem;
   line-height: 1.6;
 }
+
+/* 隐藏所有端小标题末尾的 # 锚点符号 */
+.heading-link,
+.app-prose :is(h2, h3, h4, h5, h6) > a[href^="#"],
+#article :is(h2, h3, h4, h5, h6) > a[href^="#"] {
+  display: none !important;
+}
