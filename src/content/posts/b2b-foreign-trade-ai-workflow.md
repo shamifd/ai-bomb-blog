@@ -44,7 +44,7 @@ draft: false
 
 很多外贸业务员好不容易等来老外回复“Send me your catalog”，结果甩过去一个几十兆、排版粗糙的 PDF 附件，买家在手机上根本懒得下载，沟通瞬间断掉。
 
-第三步用 **[GenPage](https://tolt.link/httpswwwgenpageairefsamd2)** 替代传统 PDF 报价单：
+第三步用 **[GenPage](https://tolt.link/ai-bomb)** 替代传统 PDF 报价单：
 
 * **针对买家身份差异化建页**：上传同一张主打产品图，3 分钟就能分别生成“针对大型批发商（突出阶梯起订量与交付周期）”和“针对品牌定制买家（突出 Logo 印刷与打样服务）”的专属英文落地页[cite: 11, 12]。
 * **掌握买家真实意向**：把干净的网页链接放进 Snov.io 跟进邮件里，不仅老外在手机上秒开浏览，后台还能帮你追踪对方是否点开了页面、停留了多久，方便业务员挑准时机二次跟进[cite: 11]。
@@ -66,5 +66,5 @@ draft: false
 
 1. **买手招聘信号挖掘（Alsona）**：[前往官网开启试用](https://www.alsona.com/?via=ai-bomb&via_subid=blog_cta)
 2. **邮箱验真与邮件+领英自动化外联（Snov.io）**：[前往官网免费注册体验](https://snov.io?fp_ref=ai_bomb&sub_id=blog_cta)
-3. **一客一页定制英文询盘落地页（GenPage）**：[前往官网免费创建首个页面](https://tolt.link/httpswwwgenpageairefsamd2)
+3. **一客一页定制英文询盘落地页（GenPage）**：[前往官网免费创建首个页面](https://tolt.link/ai-bomb)
 4. **多语言商业产品视频配音（ElevenLabs）**：[前往官网免费试听生成](https://try.elevenlabs.io/ai_bomb?sid=blog_cta)
