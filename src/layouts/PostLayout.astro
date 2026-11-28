@@ -11,6 +11,7 @@ type Props = {
   modDatetime?: Date | null;
   headline?: string;
   tags?: string[];
+  toolName?: string;
 };
 
 const { site } = config;
@@ -24,6 +25,7 @@ const {
   modDatetime,
   headline,
   tags,
+  toolName,
 } = Astro.props;
 
 const pageURL = canonicalURL ?? new URL(Astro.url.pathname, Astro.site).href;
@@ -39,6 +41,10 @@ const structuredData = {
   url: pageURL,
   mainEntityOfPage: { "@type": "WebPage", "@id": pageURL },
   ...(tags?.length && { keywords: tags.join(", "), articleSection: tags[0] }),
+  ...(toolName &&
+    !toolName.includes("串联") && {
+      about: { "@type": "SoftwareApplication", name: toolName },
+    }),
   ...(pubDatetime && { datePublished: pubDatetime.toISOString() }),
   ...((modDatetime ?? pubDatetime) && {
     dateModified: (modDatetime ?? pubDatetime)!.toISOString(),

@@ -16,6 +16,9 @@ import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
 import PostToc from "./_components/PostToc.astro";
 import PostEnd from "@/custom/PostEnd.astro";
+import QuickFacts from "@/components/post/QuickFacts.astro";
+import PostCta from "@/components/post/PostCta.astro";
+import { sectionOf } from "@/data/sections";
 import config from "@/config";
 
 export async function getStaticPaths() {
@@ -61,6 +64,13 @@ type Props = {
 };
 
 const { post, prevPost, nextPost } = Astro.props;
+
+const postSection = sectionOf(post.data.tags);
+const relatedPosts = postSection
+  ? getSortedPosts(await getCollection("posts"))
+      .filter(p => p.id !== post.id && p.data.tags.includes(postSection))
+      .slice(0, 3)
+  : [];
 const locale = Astro.currentLocale ?? config.site.lang;
 
 const {
@@ -108,6 +118,7 @@ const ogImage = ogImageUrl
   pubDatetime={pubDatetime}
   modDatetime={modDatetime}
   headline={title}
+  toolName={post.data.tool}
   tags={post.data.tags}
 >
   <Header />
@@ -121,7 +132,7 @@ const ogImage = ogImageUrl
   >
     <h1
       style={{ viewTransitionName: toTransitionName(post.id) }}
-      class="text-accent inline-block text-2xl font-bold sm:text-3xl"
+      class="inline-block text-2xl leading-snug font-bold sm:text-3xl"
     >
       {title}
     </h1>
@@ -150,9 +161,12 @@ const ogImage = ogImageUrl
           "prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)",
         ]}
       >
+        <QuickFacts tool={post.data.tool} />
         <Content />
       </article>
     </div>
+
+    <PostCta {post} related={relatedPosts} />
 
     <hr class="my-8 border-dashed" />
 

@@ -1,0 +1,55 @@
+---
+// 文末推广卡 + 同环节其他工具
+import type { CollectionEntry } from "astro:content";
+import { TOOLS, trackedUrl } from "@/data/tools";
+import { sectionOf } from "@/data/sections";
+import Card from "@/components/Card.astro";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+  related: CollectionEntry<"posts">[];
+};
+
+const { post, related } = Astro.props;
+const tool = post.data.tool ? TOOLS[post.data.tool] : undefined;
+const section = sectionOf(post.data.tags);
+---
+
+<section data-pagefind-ignore class="mt-10">
+  {
+    tool && (
+      <div class="bg-foreground text-background flex flex-col gap-3 rounded-xl px-5 py-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="text-lg font-semibold">
+            想自己试试 <span class="text-brand">{tool.name}</span>？
+          </p>
+          <p class="mt-1 text-sm opacity-80">
+            {tool.free}
+            {tool.price && `；${tool.price}`}
+          </p>
+        </div>
+        <a
+          href={trackedUrl(tool, "cta")}
+          target="_blank"
+          rel="sponsored nofollow noopener"
+          class="bg-brand text-brand-foreground inline-flex shrink-0 items-center justify-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition-opacity hover:opacity-90"
+        >
+          {tool.ctaLabel} →
+        </a>
+      </div>
+    )
+  }
+
+  {
+    related.length > 0 && (
+      <div class="mt-8">
+        <h2 class="text-lg font-semibold">同属「{section}」的工具</h2>
+        <ul>
+          {related.map(p => (
+            <Card variant="h3" {...p} />
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</section>

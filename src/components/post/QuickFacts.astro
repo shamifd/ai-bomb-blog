@@ -1,0 +1,55 @@
+---
+// 文首速览卡：适合谁 / 免费额度 / 价格 / 什么情况别买 / 直达按钮
+import { TOOLS, trackedUrl } from "@/data/tools";
+
+type Props = { tool?: string };
+const tool = Astro.props.tool ? TOOLS[Astro.props.tool] : undefined;
+
+const rows = tool
+  ? [
+      ["适合谁", tool.fitFor],
+      ["免费额度", tool.free],
+      ["价格", tool.price],
+      ["什么情况别买", tool.avoid],
+    ].filter(([, v]) => v)
+  : [];
+---
+
+{
+  tool && (
+    <aside
+      aria-label={`${tool.name} 速览`}
+      class="not-prose border-border bg-background mb-8 rounded-xl border"
+      data-pagefind-ignore
+    >
+      <div class="border-border flex items-center justify-between gap-3 border-b px-4 py-2.5">
+        <span class="text-sm font-semibold">
+          <span class="bg-brand text-brand-foreground me-2 rounded px-2 py-0.5">
+            {tool.name}
+          </span>
+          速览
+        </span>
+      </div>
+      <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2 px-4 py-3 text-[0.95rem] leading-relaxed">
+        {rows.map(([k, v]) => (
+          <>
+            <dt class="text-muted-foreground whitespace-nowrap">{k}</dt>
+            <dd>{v}</dd>
+          </>
+        ))}
+      </dl>
+      <div class="px-4 pb-4">
+        <a
+          href={trackedUrl(tool, "body")}
+          target="_blank"
+          rel="sponsored nofollow noopener"
+          class="bg-foreground text-background inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition-opacity hover:opacity-85"
+        >
+          {tool.ctaLabel}
+          <span class="text-brand" aria-hidden="true">→</span>
+        </a>
+        <span class="text-muted-foreground ms-3 text-xs">联盟推广链接，价格不变</span>
+      </div>
+    </aside>
+  )
+}
