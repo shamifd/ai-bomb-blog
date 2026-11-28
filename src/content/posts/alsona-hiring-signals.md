@@ -1,5 +1,6 @@
 ---
 title: "还在用关键词死磕采购邮箱？Alsona直接按“海外公司正在招人”抓精准买手"
+tool: "Alsona"
 author: "ai_bomb"
 pubDatetime: 2026-11-24T10:00:00.000Z
 description: "实测 Product Hunt 周榜第一的 Alsona：自动监控欧美企业采购与供应链招聘信号，核对原始招聘启事并定位决策人。"

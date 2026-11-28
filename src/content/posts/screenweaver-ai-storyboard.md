@@ -1,5 +1,6 @@
 ---
 title: "实测 ScreenWeaver：AI短剧先锁角色再出分镜"
+tool: "ScreenWeaver"
 pubDatetime: 2026-11-27T08:00:00Z
 description: "做海外AI短剧与内容营销最怕跨镜头换脸？实测海外AI分镜工作台 ScreenWeaver：导入英文剧本自动拆场次，先锁定角色设定表再生成连续分镜。"
 tags:

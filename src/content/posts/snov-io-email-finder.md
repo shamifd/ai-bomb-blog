@@ -1,5 +1,6 @@
 ---
 title: "实测 Snov.io：输入客户官网，几秒扒出精准海外采购邮箱"
+tool: "Snov.io"
 author: "ai_bomb"
 pubDatetime: 2026-11-26T14:00:00.000Z
 description: "告别盲发退信！手把手演示如何用 Snov.io 定位海外决策人并配合三色验真降低开发信退信率。"

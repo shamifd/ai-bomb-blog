@@ -38,50 +38,6 @@
   scroll-margin-block: 1rem;
 }
 
-/* 首页与文章列表卡片化 & 标题/简介行数强制对齐 */
-#recent-posts ul > li,
-#featured ul > li,
-#main-content > ul > li {
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  padding: 1.15rem 1.35rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  transition: transform 0.15s ease, border-color 0.15s ease;
-}
-
-#recent-posts ul > li:hover,
-#featured ul > li:hover,
-#main-content > ul > li:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* 标题严格限制为 1 行，超出显示省略号 */
-#recent-posts ul > li h2,
-#recent-posts ul > li h3,
-#featured ul > li h2,
-#featured ul > li h3,
-#main-content > ul > li h2,
-#main-content > ul > li h3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* 简介严格限制为 2 行，保证每张卡片高度整齐一致 */
-#recent-posts ul > li p,
-#featured ul > li p,
-#main-content > ul > li p {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-top: 0.4rem;
-  line-height: 1.6;
-}
-
 /* 隐藏所有端小标题末尾的 # 锚点符号 */
 .heading-link,
 .app-prose :is(h2, h3, h4, h5, h6) > a[href^="#"],

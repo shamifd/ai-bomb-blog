@@ -40,7 +40,7 @@ export default {
   },
   pages: {
     tagTitle: "分类",
-    tagDesc: "该分类下的全部文章：",
+    tagDesc: "业务环节：",
 
     tagsTitle: "分类",
     tagsDesc: "按业务环节查看文章。",

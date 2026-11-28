@@ -1,5 +1,6 @@
 ---
 title: "实测 OpusClip：一条长视频秒切 10 条海外爆款短片"
+tool: "OpusClip"
 author: "ai_bomb"
 pubDatetime: 2026-11-27T12:00:00.000Z
 description: "做海外社媒和TikTok矩阵最耗精力的就是把长测评拆成竖屏短视频。实测海外头部切片工具OpusClip，用6个核心FAQ拆解它的真实效率与使用边界。"

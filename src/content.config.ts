@@ -13,6 +13,8 @@ const posts = defineCollection({
       pubDatetime: z.date(),
       modDatetime: z.date().optional().nullable(),
       title: z.string(),
+      /** 文章主讲的工具名，卡片徽标用；串联篇可写多个，用“ × ”连接 */
+      tool: z.string().optional(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),

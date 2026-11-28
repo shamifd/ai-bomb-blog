@@ -1,5 +1,6 @@
 ---
 title: "实测Let's Enhance：AI生图无损放大至印刷级"
+tool: "Let's Enhance"
 author: "ai_bomb"
 pubDatetime: 2026-11-28T02:33:00Z
 description: "做跨境POD定制印花或海报设计，AI生成的图片分辨率太低印出来全是马赛克？实测老牌图像超分工具Let's Enhance：一键4倍无损放大拉满300 DPI印刷精度。"

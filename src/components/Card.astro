@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { toTransitionName } from "@/utils/toTransitionName";
+import { sectionOf } from "@/data/sections";
 import Datetime from "./Datetime.astro";
 
 type Props = {
@@ -10,22 +11,39 @@ type Props = {
 
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
-const { title, description, ...props } = data;
+const { title, description, tool, tags, ...props } = data;
+const section = sectionOf(tags);
 ---
 
-<li class="my-6">
+<li class="my-4">
   <a
     href={getPostUrl(id, filePath, Astro.currentLocale)}
     class:list={[
-      "text-accent inline-block text-lg font-medium",
-      "decoration-dashed underline-offset-4 hover:underline",
-      "focus-visible:no-underline focus-visible:underline-offset-0",
+      "group border-border bg-background block rounded-xl border px-5 py-4",
+      "transition-[border-color,transform] duration-150",
+      "hover:border-foreground/60 hover:-translate-y-0.5",
+      "focus-visible:outline-2 focus-visible:outline-dashed",
     ]}
   >
-    <Heading transition:name={toTransitionName(id)}>
+    <div class="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+      {
+        tool && (
+          <span class="bg-brand text-brand-foreground rounded px-2 py-0.5 font-semibold">
+            {tool}
+          </span>
+        )
+      }
+      {section && <span class="text-muted-foreground">{section}</span>}
+      <Datetime {...props} size="sm" class="text-muted-foreground ms-auto [&_svg]:hidden" />
+    </div>
+    <Heading
+      transition:name={toTransitionName(id)}
+      class="line-clamp-2 text-lg leading-snug font-semibold decoration-brand decoration-[3px] underline-offset-4 group-hover:underline"
+    >
       {title}
     </Heading>
+    <p class="text-muted-foreground mt-1.5 line-clamp-2 leading-relaxed">
+      {description}
+    </p>
   </a>
-  <Datetime {...props} />
-  <p>{description}</p>
 </li>

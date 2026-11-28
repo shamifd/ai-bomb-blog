@@ -1,5 +1,6 @@
 ---
 title: "老外问 ChatGPT 买货只推同行？实测 GEO 工具 Howseen AI"
+tool: "Howseen AI"
 author: "ai_bomb"
 pubDatetime: 2026-11-26T11:30:00Z
 description: "海外买家正加速用 ChatGPT 和 Perplexity 搜产品比价。实测法国团队开发的 GEO 诊断仪 Howseen AI：排查可见度与爬虫权限，生成 llms.txt。"

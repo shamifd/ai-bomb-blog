@@ -1,5 +1,6 @@
 ---
 title: "实测 GenPage：输入产品图，3 分钟生成定制英文询盘页"
+tool: "GenPage"
 pubDatetime: 2026-11-21T08:00:00Z
 description: "做外贸别再只发 PDF 报价单！实测 AI 落地页工具 GenPage：上传单张产品图，几分钟针对批发商与品牌定制买家分别生成高转化英文询盘页。"
 tags:
