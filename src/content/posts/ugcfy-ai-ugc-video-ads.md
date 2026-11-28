@@ -1,5 +1,5 @@
 ---
-title: "实测UGCfy AI：贴商品链接秒出欧美带货视频"
+title: "试试UGCfy AI：贴商品链接秒出欧美带货视频"
 author: "ai_bomb"
 pubDatetime: 2026-11-28T06:53:00Z
 description: "TikTok和Meta信息流投流找老外拍带货视频太烧钱？实测AI UGC视频工具UGCfy AI：贴入商品链接自动生成痛点钩子与口播脚本，一键输出欧美真人口播广告。"
