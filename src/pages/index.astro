@@ -34,29 +34,14 @@ const homePath = getRelativeLocaleUrl(locale, "");
     class="app-layout my-1"
   >
     <section id="hero" class="border-border border-b pt-8 pb-6">
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        ai_bomb出海
-      </h1>{" "}
-      <a
-        target="_blank"
-        href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
-        class="inline-block"
-        aria-label="RSS Feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="stroke-accent scale-125 stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
-
-      <p>
-        专注海外高效率 AI SaaS 工具实战测评与跨境出海自动化工作流，只发真实上手实测与避坑指南。
+      <h1 class="my-4 inline-block text-3xl font-bold tracking-tight sm:my-6 sm:text-4xl">
+        出海与高效率 AI 工作流拆解
+      </h1>
+      <p class="leading-relaxed">
+        持续追踪全球前沿 AI SaaS 与跨境出海工具，聚焦真实商业场景下的工作流拆解、成本算账与选型边界。
       </p>
       <p class="mt-2">
-        同步更新于微信公众号：<strong>bomb_ai</strong>（知乎：<strong>aibomb</strong> / 小红书：<strong>ai_bomb</strong>）。
+        同步更新于微信公众号：<strong>bomb_ai</strong>（知乎：<strong>aibomb</strong> / 小红书：<strong>ai_bomb</strong>）· 完整对照表见 <a href="/stack/" class="underline decoration-dashed underline-offset-4">AI武器库</a>
       </p>
     </section>
 
