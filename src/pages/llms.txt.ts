@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import { getSortedPosts } from "@/utils/getSortedPosts";
 import { getPostUrl } from "@/utils/getPostPaths";
 import config from "@/config";
+import { TOOL_LIST } from "@/data/tools";
 
 // 业务环节，与文章 tags 和 AI 武器库分组一致
 const sections = [
@@ -32,6 +33,13 @@ export const GET: APIRoute = async ({ site }) => {
     "",
     `- [AI 武器库](${abs("stack/")}): 全部收录工具按业务环节分组的对照表，含痛点、适用人群、免费额度与价格`,
     `- [关于](${abs("about/")}): 站点定位、同步平台与联盟推广说明`,
+    "",
+    "## 工具页",
+    "",
+    ...TOOL_LIST.map(
+      t =>
+        `- [${t.name}](${abs(`tools/${t.slug}/`)}): ${t.pain}。适合${t.fitFor}；${t.free}${t.price ? `；${t.price}` : ""}`
+    ),
     "",
     ...(workflow.length
       ? ["## 工作流串联", "", ...workflow.map(line), ""]

@@ -1,0 +1,116 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import QuickFacts from "@/components/post/QuickFacts.astro";
+import { TOOL_LIST, type Tool } from "@/data/tools";
+import { WORKFLOW_TAG } from "@/data/sections";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+import { slugifyStr } from "@/utils/slugify";
+import config from "@/config";
+
+export function getStaticPaths() {
+  return TOOL_LIST.map(tool => ({ params: { slug: tool.slug }, props: { tool } }));
+}
+
+const { tool } = Astro.props as { tool: Tool };
+const posts = getSortedPosts(await getCollection("posts"));
+
+// 主讲这款工具的文章，加上提到它的工作流串联篇
+const ownPosts = posts.filter(p => p.data.tool === tool.name);
+const workflowPosts = posts.filter(
+  p =>
+    p.data.tags.includes(WORKFLOW_TAG) &&
+    (p.data.description.includes(tool.name) || p.body?.includes(tool.name))
+);
+const siblings = TOOL_LIST.filter(t => t.section === tool.section && t !== tool);
+
+const title = `${tool.name} 怎么用、多少钱、适合谁`;
+const description = `${tool.name}：${tool.pain}。适合${tool.fitFor}。${tool.free}；${tool.price || "价格见官网"}。`;
+const pageURL = new URL(`tools/${tool.slug}/`, config.site.url).href;
+
+const ld = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      name: tool.name,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: tool.pain,
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "首页", item: config.site.url },
+        { "@type": "ListItem", position: 2, name: "AI 武器库", item: new URL("stack/", config.site.url).href },
+        { "@type": "ListItem", position: 3, name: tool.name, item: pageURL },
+      ],
+    },
+  ],
+}).replace(/</g, "\\u003c");
+---
+
+<Layout title={`${title} | ${config.site.title}`} {description} canonicalURL={pageURL}>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={ld} />
+  </Fragment>
+  <Header />
+  <main id="main-content" class="app-layout pb-12">
+    <nav aria-label="breadcrumb" class="text-muted-foreground mt-8 mb-2 text-sm">
+      <a href="/" class="hover:text-foreground">首页</a>
+      <span aria-hidden="true"> » </span>
+      <a href="/stack/" class="hover:text-foreground">AI 武器库</a>
+      <span aria-hidden="true"> » </span>
+      <span>{tool.name}</span>
+    </nav>
+
+    <h1 class="text-2xl leading-snug font-bold sm:text-3xl">{title}</h1>
+    <p class="text-muted-foreground mt-3 leading-relaxed">
+      <a href={`/tags/${slugifyStr(tool.section)}/`} class="decoration-brand font-medium underline decoration-2 underline-offset-4">
+        {tool.section}
+      </a>
+      · {tool.pain}
+    </p>
+
+    <div class="mt-6">
+      <QuickFacts tool={tool.name} placement="stack" linkName={false} />
+    </div>
+
+    {
+      ownPosts.length + workflowPosts.length > 0 && (
+        <section class="mt-4">
+          <h2 class="text-xl font-semibold">相关拆解文章</h2>
+          <ul>
+            {[...ownPosts, ...workflowPosts].map(p => (
+              <Card variant="h3" {...p} />
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      siblings.length > 0 && (
+        <section class="mt-8">
+          <h2 class="text-xl font-semibold">同属「{tool.section}」的工具</h2>
+          <ul class="mt-3 flex flex-wrap gap-2">
+            {siblings.map(t => (
+              <li>
+                <a
+                  href={`/tools/${t.slug}/`}
+                  class="border-border hover:border-foreground/60 inline-block rounded-lg border px-3 py-1.5 text-sm font-medium"
+                >
+                  {t.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </main>
+  <Footer />
+</Layout>

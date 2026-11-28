@@ -1,10 +1,12 @@
 ---
-import { getEntry, render } from "astro:content";
+import { getEntry, render, getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Main from "@/components/Main.astro";
 import Footer from "@/components/Footer.astro";
+import { SECTIONS } from "@/data/sections";
+import { TOOL_LIST, trackedUrl } from "@/data/tools";
 import config from "@/config";
 
 const stack = await getEntry("pages", "stack");
@@ -16,6 +18,13 @@ if (!stack) {
 }
 
 const { Content } = await render(stack);
+const posts = await getCollection("posts");
+const postCount = (name: string) => posts.filter(p => p.data.tool === name).length;
+
+const groups = SECTIONS.map(sec => ({
+  ...sec,
+  tools: TOOL_LIST.filter(t => t.section === sec.name),
+})).filter(g => g.tools.length > 0);
 ---
 
 <Layout
@@ -28,9 +37,123 @@ const { Content } = await render(stack);
 
   <Breadcrumb />
 
-  <Main pageTitle={stack.data.title} class="app-prose">
-    <Content />
+  <Main pageTitle={stack.data.title}>
+    <div class="app-prose max-w-app">
+      <Content />
+    </div>
+
+    <div
+      id="stack-filter"
+      role="group"
+      aria-label="按业务环节筛选"
+      class="mt-8 flex flex-wrap gap-2"
+    >
+      <button
+        type="button"
+        data-filter="all"
+        aria-pressed="true"
+        class="filter-btn border-border rounded-full border px-3 py-1 text-sm font-medium"
+      >
+        全部 {TOOL_LIST.length}
+      </button>
+      {
+        groups.map(g => (
+          <button
+            type="button"
+            data-filter={g.name}
+            aria-pressed="false"
+            class="filter-btn border-border rounded-full border px-3 py-1 text-sm font-medium"
+          >
+            {g.name} {g.tools.length}
+          </button>
+        ))
+      }
+    </div>
+
+    {
+      groups.map(g => (
+        <section data-section={g.name} class="stack-group mt-10">
+          <h2 class="text-xl font-semibold">{g.name}</h2>
+          <p class="text-muted-foreground mt-1 text-sm">{g.blurb}</p>
+          <ul class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {g.tools.map(t => (
+              <li class="border-border bg-background flex flex-col rounded-xl border p-4">
+                <a
+                  href={`/tools/${t.slug}/`}
+                  class="decoration-brand self-start text-lg font-semibold decoration-[3px] underline-offset-4 hover:underline"
+                >
+                  {t.name}
+                </a>
+                <p class="mt-1 text-sm leading-relaxed">{t.pain}</p>
+                <dl class="text-muted-foreground mt-3 grid grid-cols-[auto_1fr] gap-x-2 gap-y-1 text-sm">
+                  <dt class="whitespace-nowrap">适合谁</dt>
+                  <dd>{t.fitFor}</dd>
+                  <dt class="whitespace-nowrap">免费</dt>
+                  <dd>{t.free}</dd>
+                  {t.price && (
+                    <>
+                      <dt class="whitespace-nowrap">价格</dt>
+                      <dd>{t.price}</dd>
+                    </>
+                  )}
+                </dl>
+                <div class="mt-auto flex flex-wrap items-center gap-3 pt-4 text-sm">
+                  <a
+                    href={trackedUrl(t, "stack")}
+                    target="_blank"
+                    rel="sponsored nofollow noopener"
+                    class="bg-foreground text-background rounded-lg px-3 py-1.5 font-semibold hover:opacity-85"
+                  >
+                    {t.ctaLabel} <span class="text-brand">→</span>
+                  </a>
+                  {postCount(t.name) > 0 && (
+                    <a href={`/tools/${t.slug}/`} class="font-medium underline decoration-dashed underline-offset-4">
+                      看拆解
+                    </a>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+
+    <section class="border-border mt-12 border-t pt-6 text-sm leading-relaxed">
+      <h2 class="text-base font-semibold">交流与商务合作</h2>
+      <ul class="mt-2 space-y-1">
+        <li>微信公众号：<strong>bomb_ai</strong>（回复工具英文名，获取图文教程与最新避坑提醒）</li>
+        <li>知乎：<strong>aibomb</strong> · 小红书：<strong>ai_bomb</strong></li>
+        <li>海外 SaaS 合作：<a href="mailto:shamifd@gmail.com" class="underline decoration-dashed underline-offset-4">shamifd@gmail.com</a></li>
+      </ul>
+      <p class="text-muted-foreground mt-4">
+        联盟推广说明：本页工具链接为联盟推广链接，通过它注册或付费，本站会获得佣金，你支付的价格不变。
+      </p>
+    </section>
   </Main>
 
   <Footer />
 </Layout>
+
+<style>
+  .filter-btn[aria-pressed="true"] {
+    background: var(--foreground);
+    color: var(--background);
+    border-color: var(--foreground);
+  }
+</style>
+
+<script>
+  function setupStackFilter() {
+    const box = document.getElementById("stack-filter");
+    if (!box) return;
+    const buttons = [...box.querySelectorAll<HTMLButtonElement>(".filter-btn")];
+    const groups = [...document.querySelectorAll<HTMLElement>(".stack-group")];
+    const apply = (key: string) => {
+      buttons.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.filter === key)));
+      groups.forEach(g => (g.hidden = key !== "all" && g.dataset.section !== key));
+    };
+    buttons.forEach(b => b.addEventListener("click", () => apply(b.dataset.filter ?? "all")));
+  }
+  document.addEventListener("astro:page-load", setupStackFilter);
+</script>
