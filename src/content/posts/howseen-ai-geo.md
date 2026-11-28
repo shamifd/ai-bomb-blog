@@ -8,6 +8,13 @@ tags:
   - 独立站与GEO
 featured: false
 draft: false
+faq:
+  - q: "Howseen AI 的三个免费工具分别查什么？"
+    a: "AI Visibility Checker 查 AI 搜索推荐的是你还是同行；AI Crawler Checker 查网站有没有误封 OAI-SearchBot、PerplexityBot 等 AI 爬虫；LLMs.txt Generator 一键生成网站的 llms.txt。"
+  - q: "付费监控版多少钱？"
+    a: "入门版 39 欧元/月（年付约 31 欧元/月），追踪 20 个买家提问；专业版 79 欧元/月（年付约 63 欧元/月），追踪 50 个。支持 3 天免费试用。"
+  - q: "只想检查一次需要订阅吗？"
+    a: "不需要。三个诊断工具在官网免费开放，给自己和同行的独立站摸一次底就够。"
 ---
 
 做跨境独立站和外贸 B2B 的朋友，今年一定明显感觉到一件事：Google 自然搜索的点击率在往下掉，获客成本却越来越高。

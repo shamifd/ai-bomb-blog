@@ -1,0 +1,21 @@
+---
+// 文末常见问答（结构化数据在 PostLayout 里输出）
+type Props = { faq?: { q: string; a: string }[] };
+const { faq = [] } = Astro.props;
+---
+
+{
+  faq.length > 0 && (
+    <section id="faq" aria-labelledby="faq-title" class="mt-10">
+      <h2 id="faq-title" class="text-xl font-semibold">常见问题</h2>
+      <dl class="mt-4 space-y-3">
+        {faq.map(item => (
+          <div class="border-border rounded-xl border px-4 py-3">
+            <dt class="font-semibold">{item.q}</dt>
+            <dd class="text-muted-foreground mt-1.5 leading-relaxed">{item.a}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  )
+}

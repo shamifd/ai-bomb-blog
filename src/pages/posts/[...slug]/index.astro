@@ -18,6 +18,7 @@ import PostToc from "./_components/PostToc.astro";
 import PostEnd from "@/custom/PostEnd.astro";
 import QuickFacts from "@/components/post/QuickFacts.astro";
 import PostCta from "@/components/post/PostCta.astro";
+import FaqSection from "@/components/post/FaqSection.astro";
 import { sectionOf } from "@/data/sections";
 import config from "@/config";
 
@@ -119,6 +120,7 @@ const ogImage = ogImageUrl
   modDatetime={modDatetime}
   headline={title}
   toolName={post.data.tool}
+  faq={post.data.faq}
   tags={post.data.tags}
 >
   <Header />
@@ -165,6 +167,8 @@ const ogImage = ogImageUrl
         <Content />
       </article>
     </div>
+
+    <FaqSection faq={post.data.faq} />
 
     <PostCta {post} related={relatedPosts} />
 

@@ -15,6 +15,10 @@ const posts = defineCollection({
       title: z.string(),
       /** 文章主讲的工具名，卡片徽标用；串联篇可写多个，用“ × ”连接 */
       tool: z.string().optional(),
+      /** 文末常见问答，同时输出 FAQPage 结构化数据 */
+      faq: z
+        .array(z.object({ q: z.string(), a: z.string() }))
+        .optional(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
