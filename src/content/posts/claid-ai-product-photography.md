@@ -1,7 +1,7 @@
 ---
 title: "实测Claid.ai：白底图秒变欧美棚拍场景"
 author: "ai_bomb"
-pubDatetime: 2026-11-27T00:00:00Z
+pubDatetime: 2026-11-28T02:10:00Z
 description: "跨境独立站与亚马逊上新拍场景图太烧钱？实测电商AI视觉工具Claid.ai：白底图一键生成真实光影欧美棚拍大片，模糊供应链原图无损高清放大。"
 tags:
   - 跨境电商
