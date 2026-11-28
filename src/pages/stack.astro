@@ -146,7 +146,8 @@ const groups = SECTIONS.map(sec => ({
 <script>
   function setupStackFilter() {
     const box = document.getElementById("stack-filter");
-    if (!box) return;
+    if (!box || box.dataset.ready) return;
+    box.dataset.ready = "1";
     const buttons = [...box.querySelectorAll<HTMLButtonElement>(".filter-btn")];
     const groups = [...document.querySelectorAll<HTMLElement>(".stack-group")];
     const apply = (key: string) => {
@@ -155,5 +156,7 @@ const groups = SECTIONS.map(sec => ({
     };
     buttons.forEach(b => b.addEventListener("click", () => apply(b.dataset.filter ?? "all")));
   }
+  // 页面切换脚本被拦截时也能用：先直接启动一次，再监听站内跳转
+  setupStackFilter();
   document.addEventListener("astro:page-load", setupStackFilter);
 </script>
